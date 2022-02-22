@@ -88,9 +88,15 @@ ul {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link-icon {
   fill: var(--color-icons);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover,
 .social-link:focus {
@@ -148,6 +154,9 @@ nav {
   color: var(--secondary-color-text);
   padding-top: 10px;
   padding-bottom: 10px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .feedback.link {
   font-weight: 500;
@@ -155,6 +164,9 @@ nav {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--basic-color-text);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-item {
   display: flex;
@@ -232,6 +244,10 @@ nav {
 
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button.primary:hover,
 .button.primary:focus {
@@ -243,6 +259,10 @@ nav {
   font-weight: 500;
   line-height: 1.62;
   letter-spacing: 0.03em;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button.secondary:hover,
 .button.secondary:focus {
@@ -292,6 +312,27 @@ nav {
   background-color: var(--secondary-bg-color);
   border-radius: 4px;
 }
+.working-item {
+  position: relative;
+}
+.working-subscription {
+  position: absolute;
+  bottom: 0;
+  width: 370px;
+  height: 70px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 27px;
+
+  color: #ffffff;
+  background: rgba(47, 48, 58, 0.8);
+}
 
 .team-section {
   background-color: var(--secondary-bg-color);
@@ -332,6 +373,9 @@ nav {
 }
 .client-logo {
   fill: var(--color-icons);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .regular-client-link {
   display: flex;
@@ -341,6 +385,10 @@ nav {
   height: 92px;
   border: 1px solid var(--color-icons);
   border-radius: 4px;
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .regular-client-link:hover,
 .regular-client-link:focus {
@@ -372,6 +420,9 @@ nav {
   margin-right: var(--card-set-gat);
   width: calc(100% / 3- var(--card-set-gat));
   border-bottom: 1px solid #eeeeee;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-list > .item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -393,9 +444,26 @@ nav {
   border: 1px solid #eeeeee;
   border-top: none;
 }
+.imgcard {
+  position: relative;
+}
+.imgcard::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+}
+.imgcard:hover::before {
+  opacity: 1;
+}
+
 .portfolio-exemple {
   font-size: 16px;
   line-height: 1.87;
+
+  color: var(--basic-color-text);
 }
 /* section portfolio page end=== */
 /* ===footer start=== */
@@ -416,6 +484,9 @@ nav {
 .location {
   font-style: normal;
   color: var(--primary-white-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .location:hover,
 .location:focus {
@@ -457,3 +528,52 @@ nav {
   fill: var(--primary-white-color);
 }
 /* ===footer end=== */
+/* ===backdrop start=== */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(25%);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+  padding: 8px;
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.close-btn {
+  position: absolute;
+  right: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-white-color);
+}
+
+/* ===backdrop end=== */

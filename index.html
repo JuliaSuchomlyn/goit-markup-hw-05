@@ -50,7 +50,7 @@
 		<section class="hero">
 			<div class="container">
 				<h1 class="hero-title">Эффективные решения<br> для вашего бизнеса</h1>
-				<button type="button" class="button primary">Заказать услугу</button>
+				<button type="button" class="button primary" data-modal-open>Заказать услугу</button>
 			</div>
 		</section>
 		<!--section-->
@@ -107,16 +107,19 @@
 			<h2 class="title">Чем мы занимаемся</h2>
 			<ul class="working-list list">
 
-				<li class="item">
+				<li class="working-item item">
 					<img src="./images/handstype.jpg" alt="руки печатают текст" width="370">
+					<p class="working-subscription">Десктопные приложения</p>
 				</li>
 
-				<li class="item">
+				<li class="working-item item">
 					<img src="./images/handsphone.jpg" alt="рука с телефоном" width="370" height="294">
+					<p class="working-subscription">Мобильные приложения</p>
 				</li>
 
-				<li class="item">
+				<li class="working-item item">
 					<img src="./images/pallete.jpg" alt="палитра цветов" width="370" height="294">
+					<p class="working-subscription">Дизайнерские решения</p>
 				</li>
 			</ul>
 			</div>
@@ -333,7 +336,7 @@
 		
 			</div>
 		</section>			
-	<!-- /Regular customers-->
+	<!-- /Regular customers-->	
 	</main>
 	<!--footer-->
 	<footer class="footer">
@@ -391,5 +394,15 @@
 			</div>
 		</div>
 	</footer>
+	<div class="backdrop is-hidden" data-modal>
+		<div class="modal">
+			<button class="close-btn" data-modal-close>
+				<svg class="close-icon" width="11" height="11">
+					<use href="./images/icons.svg#icon-close"></use>
+				</svg>
+			</button>
+		</div>
+	</div>
+	<script src="./js/modal.js"></script>
 </body>
 </html>
